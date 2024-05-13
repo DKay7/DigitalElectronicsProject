@@ -24,16 +24,16 @@ IO_PORT "rst" PULL_MODE=UP BANK_VCCIO=1.8;
 IO_LOC "clk" 52;
 IO_PORT "clk" PULL_MODE=UP BANK_VCCIO=1.8;
 
-// IO_LOC "digit[0]" 75;
-// IO_LOC "digit[1]" 72;
-// IO_LOC "digit[2]" 73;
-// IO_LOC "digit[3]" 74;
-// 
-// IO_LOC "seg[0]" 71; // A
-// IO_LOC "seg[1]" 31; // B
-// IO_LOC "seg[2]" 53; // C
-// IO_LOC "seg[3]" 56; // D
-// IO_LOC "seg[4]" 55; // E
-// IO_LOC "seg[5]" 70; // F
-// IO_LOC "seg[6]" 54; // G
-// IO_LOC "seg[7]" 57; // DP
+IO_LOC "digit[0]" 75;
+IO_LOC "digit[1]" 72;
+IO_LOC "digit[2]" 73;
+IO_LOC "digit[3]" 74;
+ 
+IO_LOC "seg[0]" 71; // A
+IO_LOC "seg[1]" 31; // B
+IO_LOC "seg[2]" 53; // C
+IO_LOC "seg[3]" 56; // D
+IO_LOC "seg[4]" 55; // E
+IO_LOC "seg[5]" 70; // F
+IO_LOC "seg[6]" 54; // G
+IO_LOC "seg[7]" 57; // DP

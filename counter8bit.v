@@ -3,32 +3,28 @@
 module counter8bit(
     input clk, 
     input rst_on,
-    output [7:0] led
-    
+
+    output [7:0] led,
+    output [3:0] digit,
+    output [7:0] seg
 );
 
+wire clk_div;
+clock_div clock_divider(.clk(clk), .clk_div(clk_div));
 
 reg [7:0] counter = 0;
 reg [24:0] ctr = 0;
 
-assign counter_max = (counter == 8'hFF);
-
 assign led = counter;
 
-
-always @(posedge clk) begin
-    if (ctr != 10000000)
-        ctr = ctr + 1;
-    else
-        ctr = 0;
-end
-
-always @(posedge clk) begin
-    if (counter_max || ~rst_on)
+always @(posedge clk_div) begin
+    if (~rst_on)
         counter = 0;
-    else if (ctr == 10000000)
+    else
         counter = counter + 1;
-    
+
 end
+
+draw_num_on_seg drawer(.clk(clk), .data(counter), .digit(digit), .segments(seg));
 
 endmodule
