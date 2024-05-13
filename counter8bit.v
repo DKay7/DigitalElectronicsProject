@@ -1,4 +1,3 @@
-`timescale 1 ns / 100 ps
 
 module counter8bit(
     input clk, 
@@ -10,7 +9,7 @@ module counter8bit(
 );
 
 wire clk_div;
-clock_div clock_divider(.clk(clk), .clk_div(clk_div));
+clock_div #(22) clock_divider(.clk(clk), .clk_div(clk_div));
 
 reg [7:0] counter = 0;
 reg [24:0] ctr = 0;
@@ -25,6 +24,6 @@ always @(posedge clk_div) begin
 
 end
 
-draw_num_on_seg drawer(.clk(clk), .data(counter), .digit(digit), .segments(seg));
+draw_num_on_seg drawer(.clk(clk), .data(led), .digit(digit), .segments(seg));
 
 endmodule

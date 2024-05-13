@@ -1,14 +1,16 @@
-module clock_div(
+module clock_div #(
+    parameter MAX = 1
+) (
     input clk,
     output clk_div
 );
 
-reg [22:0] cnt = 0;
+reg [MAX:0] cnt = 0;
 
-assign clk_div = cnt[22];
+assign clk_div = cnt[MAX];
 
 always @(posedge clk) begin
-    cnt <= cnt + 22'b1;
+    cnt <= cnt + 'b1;
 end
 
 endmodule
