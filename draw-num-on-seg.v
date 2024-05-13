@@ -28,8 +28,6 @@ always @(posedge clk_div) begin
     
 end
 
-// TODO clock divider
-
 hex_to_seg hex_to_seg(.clk(clk), .data(bits_to_draw), .segments(segments));
 
 endmodule
